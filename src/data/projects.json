@@ -8,7 +8,7 @@
     "progreso": 80,
     "fechaInicio": "2026-03-01",
     "fechaCierreEst": "2026-06-30",
-    "repo": "https://github.com/automatizacion-it/iit-chatbot",
+    "repo": "",
     "notas": "Falta integrar envío de archivos adjuntos"
   },
   {
@@ -20,7 +20,7 @@
     "progreso": 90,
     "fechaInicio": "2026-01-15",
     "fechaCierreEst": "2026-05-30",
-    "repo": "https://github.com/automatizacion-it/esp32-relay",
+    "repo": "",
     "notas": "Pruebas finales de estabilidad WiFi"
   },
   {
@@ -32,7 +32,7 @@
     "progreso": 60,
     "fechaInicio": "2026-04-01",
     "fechaCierreEst": "2026-07-15",
-    "repo": "https://github.com/automatizacion-it/iit-os-v3",
+    "repo": "",
     "notas": "En desarrollo módulo de reportes"
   },
   {
@@ -44,7 +44,7 @@
     "progreso": 45,
     "fechaInicio": "2026-02-10",
     "fechaCierreEst": "2026-08-01",
-    "repo": "https://github.com/automatizacion-it/infraestructura-it-web",
+    "repo": "",
     "notas": "Pendiente redacción de contenidos"
   },
   {
@@ -56,7 +56,7 @@
     "progreso": 10,
     "fechaInicio": "2026-05-01",
     "fechaCierreEst": "2026-09-30",
-    "repo": "https://github.com/automatizacion-it/esp32s3-voice-assistant",
+    "repo": "",
     "notas": "Investigación de modelos TTS/STT offline"
   },
   {
@@ -68,7 +68,7 @@
     "progreso": 5,
     "fechaInicio": "2026-05-20",
     "fechaCierreEst": "2026-10-01",
-    "repo": "https://github.com/automatizacion-it/iit-rrhh",
+    "repo": "",
     "notas": "Pendiente definición de requerimientos"
   },
   {
@@ -80,7 +80,7 @@
     "progreso": 100,
     "fechaInicio": "2026-02-01",
     "fechaCierreEst": "2026-03-15",
-    "repo": "https://github.com/automatizacion-it/scrollytelling-iit-v2",
+    "repo": "",
     "notas": "Desplegado en producción"
   },
   {
@@ -92,7 +92,7 @@
     "progreso": 100,
     "fechaInicio": "2026-01-10",
     "fechaCierreEst": "2026-02-28",
-    "repo": "https://github.com/automatizacion-it/MQTT_P2P_MODULE",
+    "repo": "",
     "notas": "Documentación completa publicada"
   }
 ]
