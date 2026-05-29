@@ -1,0 +1,98 @@
+[
+  {
+    "id": "iit-chatbot",
+    "nombre": "IIT Chatbot",
+    "descripcion": "Chatbot corporativo con integración WhatsApp para atención al cliente",
+    "estado": "corriendo",
+    "tecnologias": ["React", "Node.js", "WhatsApp API"],
+    "progreso": 80,
+    "fechaInicio": "2026-03-01",
+    "fechaCierreEst": "2026-06-30",
+    "repo": "https://github.com/automatizacion-it/iit-chatbot",
+    "notas": "Falta integrar envío de archivos adjuntos"
+  },
+  {
+    "id": "esp32-relay",
+    "nombre": "ESP32 Relay Control",
+    "descripcion": "Control de relés via WiFi con ESP32, interfaz web embebida",
+    "estado": "corriendo",
+    "tecnologias": ["C++", "Arduino", "ESP32", "HTML"],
+    "progreso": 90,
+    "fechaInicio": "2026-01-15",
+    "fechaCierreEst": "2026-05-30",
+    "repo": "https://github.com/automatizacion-it/esp32-relay",
+    "notas": "Pruebas finales de estabilidad WiFi"
+  },
+  {
+    "id": "iit-ordenes-servicio",
+    "nombre": "Órdenes de Servicio v3",
+    "descripcion": "Sistema de gestión de órdenes de trabajo para técnicos de campo",
+    "estado": "corriendo",
+    "tecnologias": ["React", "Node.js", "SQLite"],
+    "progreso": 60,
+    "fechaInicio": "2026-04-01",
+    "fechaCierreEst": "2026-07-15",
+    "repo": "https://github.com/automatizacion-it/iit-os-v3",
+    "notas": "En desarrollo módulo de reportes"
+  },
+  {
+    "id": "infraestructura-it-web",
+    "nombre": "Web Corporativa IIT",
+    "descripcion": "Sitio web corporativo de Infraestructura IT",
+    "estado": "pausado",
+    "tecnologias": ["HTML", "CSS", "JS"],
+    "progreso": 45,
+    "fechaInicio": "2026-02-10",
+    "fechaCierreEst": "2026-08-01",
+    "repo": "https://github.com/automatizacion-it/infraestructura-it-web",
+    "notas": "Pendiente redacción de contenidos"
+  },
+  {
+    "id": "esp32s3-voice-assistant",
+    "nombre": "Voice Assistant ESP32-S3",
+    "descripcion": "Asistente de voz embebido en ESP32-S3 con procesamiento de audio",
+    "estado": "backlog",
+    "tecnologias": ["C++", "ESP32-S3", "Python"],
+    "progreso": 10,
+    "fechaInicio": "2026-05-01",
+    "fechaCierreEst": "2026-09-30",
+    "repo": "https://github.com/automatizacion-it/esp32s3-voice-assistant",
+    "notas": "Investigación de modelos TTS/STT offline"
+  },
+  {
+    "id": "iit-rrhh",
+    "nombre": "RRHH IIT",
+    "descripcion": "Módulo de gestión de recursos humanos y control de asistencia",
+    "estado": "backlog",
+    "tecnologias": ["React", "Node.js", "PostgreSQL"],
+    "progreso": 5,
+    "fechaInicio": "2026-05-20",
+    "fechaCierreEst": "2026-10-01",
+    "repo": "https://github.com/automatizacion-it/iit-rrhh",
+    "notas": "Pendiente definición de requerimientos"
+  },
+  {
+    "id": "scrollytelling-iit",
+    "nombre": "Scrollytelling IIT",
+    "descripcion": "Landing page animada con scrollytelling para casos de éxito",
+    "estado": "completado",
+    "tecnologias": ["HTML", "CSS", "GSAP"],
+    "progreso": 100,
+    "fechaInicio": "2026-02-01",
+    "fechaCierreEst": "2026-03-15",
+    "repo": "https://github.com/automatizacion-it/scrollytelling-iit-v2",
+    "notas": "Desplegado en producción"
+  },
+  {
+    "id": "mqtt-p2p-module",
+    "nombre": "MQTT P2P Module",
+    "descripcion": "Módulo de comunicación MQTT punto a punto para dispositivos IoT",
+    "estado": "completado",
+    "tecnologias": ["C++", "ESP32", "MQTT"],
+    "progreso": 100,
+    "fechaInicio": "2026-01-10",
+    "fechaCierreEst": "2026-02-28",
+    "repo": "https://github.com/automatizacion-it/MQTT_P2P_MODULE",
+    "notas": "Documentación completa publicada"
+  }
+]
