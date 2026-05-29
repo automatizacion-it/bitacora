@@ -1,17 +1,25 @@
 import { useState, useMemo } from 'react'
-import projects from './data/projects.json'
+import { useProjects, useAccounts } from './hooks/useProjects'
 import ProjectCard from './components/ProjectCard'
 import FilterBar from './components/FilterBar'
+import AccountsPanel from './components/AccountsPanel'
+import RepoPickerModal from './components/RepoPickerModal'
 
-const countByEstado = (estado) => projects.filter((p) => p.estado === estado).length
+const countByEstado = (projects, estado) => projects.filter((p) => p.estado === estado).length
 
 export default function App() {
   const [filter, setFilter] = useState('todos')
+  const [selectedAccount, setSelectedAccount] = useState(null)
+
+  const { allProjects, addProject, removeProject } = useProjects()
+  const { accounts, addAccount, removeAccount } = useAccounts()
 
   const visible = useMemo(
-    () => filter === 'todos' ? projects : projects.filter((p) => p.estado === filter),
-    [filter]
+    () => filter === 'todos' ? allProjects : allProjects.filter((p) => p.estado === filter),
+    [filter, allProjects]
   )
+
+  const projectIds = allProjects.map((p) => p.id)
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100">
@@ -25,11 +33,19 @@ export default function App() {
 
         {/* Stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-          <StatCard label="Corriendo" value={countByEstado('corriendo')} color="text-green-400" />
-          <StatCard label="Pausados" value={countByEstado('pausado')} color="text-yellow-400" />
-          <StatCard label="En espera" value={countByEstado('backlog')} color="text-slate-400" />
-          <StatCard label="Completados" value={countByEstado('completado')} color="text-blue-400" />
+          <StatCard label="Corriendo" value={countByEstado(allProjects, 'corriendo')} color="text-green-400" />
+          <StatCard label="Pausados" value={countByEstado(allProjects, 'pausado')} color="text-yellow-400" />
+          <StatCard label="En espera" value={countByEstado(allProjects, 'backlog')} color="text-slate-400" />
+          <StatCard label="Completados" value={countByEstado(allProjects, 'completado')} color="text-blue-400" />
         </div>
+
+        {/* Cuentas GitHub */}
+        <AccountsPanel
+          accounts={accounts}
+          onAddAccount={addAccount}
+          onRemoveAccount={removeAccount}
+          onSelectAccount={setSelectedAccount}
+        />
 
         {/* Filtros */}
         <div className="mb-6">
@@ -42,11 +58,25 @@ export default function App() {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {visible.map((p) => (
-              <ProjectCard key={p.id} project={p} />
+              <ProjectCard
+                key={p.id}
+                project={p}
+                onRemove={p._account ? () => removeProject(p.id) : null}
+              />
             ))}
           </div>
         )}
       </div>
+
+      {/* Modal selector de repos */}
+      {selectedAccount && (
+        <RepoPickerModal
+          username={selectedAccount}
+          existingIds={projectIds}
+          onAdd={addProject}
+          onClose={() => setSelectedAccount(null)}
+        />
+      )}
     </div>
   )
 }

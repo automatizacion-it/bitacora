@@ -7,15 +7,34 @@ const progressColor = {
   completado: 'bg-blue-500',
 }
 
-export default function ProjectCard({ project }) {
-  const { nombre, descripcion, estado, tecnologias, progreso, fechaInicio, fechaCierreEst, repo, notas } = project
+export default function ProjectCard({ project, onRemove }) {
+  const { nombre, descripcion, estado, tecnologias, progreso, fechaInicio, fechaCierreEst, repo, notas, _account } = project
 
   return (
-    <div className="flex flex-col gap-4 rounded-xl bg-slate-800/60 border border-slate-700/50 p-5 hover:border-slate-600 transition-colors">
+    <div className="flex flex-col gap-4 rounded-xl bg-slate-800/60 border border-slate-700/50 p-5 hover:border-slate-600 transition-colors relative group">
+
+      {/* Botón eliminar (solo repos importados) */}
+      {onRemove && (
+        <button
+          onClick={onRemove}
+          title="Quitar del dashboard"
+          className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity text-slate-600 hover:text-red-400 cursor-pointer"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      )}
 
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
+          {_account && (
+            <div className="flex items-center gap-1 mb-1">
+              <img src={`https://github.com/${_account}.png?size=16`} alt={_account} className="w-3.5 h-3.5 rounded-full" />
+              <span className="text-xs text-slate-500">{_account}</span>
+            </div>
+          )}
           <h3 className="font-semibold text-slate-100 truncate text-base leading-snug">{nombre}</h3>
           <p className="text-sm text-slate-400 mt-0.5 line-clamp-2">{descripcion}</p>
         </div>
